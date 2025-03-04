@@ -1,0 +1,129 @@
+.body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+ 
+}
+.welcome
+{
+    background-image: url("https://cdn.pixabay.com/photo/2024/01/29/22/47/ai-generated-8540915_640.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+}
+.welcome h1
+{
+    color: white;
+    font-size: 130px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 180px;
+}
+.dls
+{
+    margin-left: 190px;
+    margin-right: 180px;
+    font-size: 120%;
+}
+.dls h1
+{
+ text-align: center;
+ color: #b33939;
+ padding-top: 20px;
+ padding-bottom: 5px;
+
+}
+.col p{
+    margin-left: 50px;
+    color:#fc5c65 ;
+    margin-top: 20px;
+}
+#example
+{
+    margin-top: 30px;
+}
+.dls h4{
+    color: #3B3B98;
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+.dls p{
+    margin-left: 50px;
+    margin-right: 50px;
+    
+}
+.dls img
+{
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+@media screen and (max-width: 480px)
+{
+    .welcome
+{
+    background-image: url("https://cdn.pixabay.com/photo/2024/01/29/22/47/ai-generated-8540915_640.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+}
+.welcome h1
+{
+    color: white;
+    font-size: 130px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 180px;
+}
+.dls
+{
+    margin-left: 190px;
+    margin-right: 180px;
+    font-size: 220%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.dls h1
+{
+ text-align: center;
+ color: #b33939;
+ padding-top: 20px;
+ padding-bottom: 5px;
+
+}
+.col p{
+    margin-left: 50px;
+    color:#fc5c65 ;
+    margin-top: 20px;
+}
+#example
+{
+    margin-top: 30px;
+}
+.dls h4{
+    color: #3B3B98;
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+.dls p{
+    margin-left: 50px;
+    margin-right: 50px;
+    
+}
+.dls img
+{
+    margin-top: 50px;
+    margin-left: 200px;
+}
+}

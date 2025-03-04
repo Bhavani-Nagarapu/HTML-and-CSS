@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Leature-3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/ml3.css">
+</head>
+
+<body>
+    <div class="welcome">
+        <h1>Welcome <br> to <br> Machine Learning</h1>
+    </div>
+    <div class="dls">
+        <h1 style="font-size: 370%;"><b>Leature-3</b></h1>
+        <h1><b>Designing a learning system .</b></h1>
+        <br>
+        <p>1. Choose a training system/Experience<br>
+            2. Choose the target Function<br>
+            3. Representation of the target function ( Linear Function / Decision Trees (DT) / Gradient Descent (GD)
+            etc.. // All called as Hypothesis )<br>
+            4. Choosing function approximation algorithm to infer the target function
+        </p>
+        <p>An approximation algorithm is an algorithm that provides an approximate solution to a computational problem,
+            often in situations where finding an exact solution is computationally infeasible or impractical.<br>
+
+            Approximation algorithms provide a way to find a solution that is guaranteed to be within a certain range or
+            factor of the optimal solution.
+        </p>
+        <p>Example : <b>Find the smallest sand in a pull of sand/ find the smallest dust particle on your table</b>
+        </p>
+        <h4>Choose a training system/Experience</h4>
+        <p>First design challange we face is to choose the type of training experience (Knowledge) from which our system
+            will learn
+        </p>
+        <div class="row">
+            <div class="col">
+                <p>1.Direct learning <br>
+                    2.In-direct learning
+                </p>
+            </div>
+            <div class="col">
+                <div id="example" style="border: 2px solid black; padding: 10px;">Example from Checker game <br>/
+                    Learning from Class Vs Friend </div>
+            </div>
+        </div>
+        <p style=" margin-top: 30px;">Note : Learning from direct training feedback is typically easier than learning
+            from indirect
+            feedback<br><br>
+            A second important attribute of the training experience is the <b> degree to which</b> the learner controls
+            the <b>sequence of training / target knowledge</b> .<br><br>
+            A third important attribute of the training experience is how well it represents the <b>distribution of
+                examples</b> over which the final <b>system performance(P)/learning mechanism</b> must be measured
+        </p><br>
+        <p>In order to complete the design of the learning system, we must decide on :<br>
+        <p style="margin-left: 90px;"> <b>
+                1. The exact type of knowledge to be learn <br>
+                2. A representation for this target knowledge <br>
+                3. A learning mechanism
+            </b></p>
+        </p>
+        <h4>Choose the target Function :</h4>
+        <p>The program needs only to learn <b> how to choose the best move from among these legal moves</b>.<br><br>
+            B -> M to indicate that this function accepts as input any board from the set of legal board states B
+            (b1+b2+…..+bn) and produces as output some move from the set of legal moves M (m1+m2+…..+mn) <br><br>
+            1.if b is a final board state that is won, then V(b) = 100 <br>
+            2.if b is a final board state that is lost, then V(b) = -100 <br>
+            3.if b is a final board state that is drawn, then V(b) = 0 <br>
+            4.if b is a not a final state in the game, then V(b) = V(b'), where b' is the best final board state that
+            can be achieved starting from b and playing optimally until the end of the game (assuming the opponent plays
+            optimally, as well). <br><br>
+            Nonoperational definition : for a particular board state requires (case 4)
+            searching ahead for the optimal line of play, all the way to the end of the game but
+            is not efficiently computable so called as Nonoperational definition.
+        </p>
+        <h4>Representation of target Function :</h4>
+        <p>x1: the number of black pieces on the board <br>
+            x2: the number of red pieces on the board <br>
+            x3: the number of black kings on the board <br>
+            x4: the number of red kings on the board <br>
+            x5: the number of black pieces threatened by red (i.e., which can be captured on red's next turn) <br>
+            X6: the number of red pieces threatened by black<br><br>
+
+            Thus, our learning program will represent Ṽ(b) as a linear function of the form<br><br>
+
+            <b style="margin-left: 300px;">(b) = W0 + w1x1 + w2x2 + w3x3 + w4x4 + w5x5 + w6x6</b><br><br>
+
+            Where wo through W6 are numerical coefficients/weights
+        </p>
+        <h4>Choosing function approximation algorithm :</h4>
+        <p>Let Board state = b
+            Training value of board state = Vtrain(b)
+            The relationship or <b> Order pair been represented </b>as : <br>(b, Vtrain(b))<br>
+            Let say Black has own the game then<br>
+            b = (x1 = 3 , x = 0, x3 = 1, x4 = 0, x5 = 0, x6 = 0) and V(b) = +100 or Vtrain(b) = 100<br><br>
+
+            How do we represent the <b>complete pair</b> :<br>
+            <(x1=3 , x=0, x3=1, x4=0, x5=0, x6=0),+100>
+
+
+        </p>
+        <h4>Estimating training Value : </h4>
+        <p>Let take the example of a relay race/checker game / Chess :<br><br>
+
+            A relay race is a type of race where teams of runners take turns to complete a course, passing a baton or
+            other object between teammates at the end of each leg. The goal is for the team to complete the course as
+            quickly as possible, with each runner contributing to the overall time.<br><br>
+
+            In a typical relay race, the course is divided into equal sections, or legs, of a certain distance. Each
+            team member runs one leg of the race before passing the baton to the next runner. The order in which the
+            team members run is predetermined and often depends on the strengths and abilities of each runner.<br>
+            <br>
+            The Rule for estimating training value been represented as <br><br>
+
+            Vtrain(b) <- v^(Successor(b)) </p>
+                <h4>Adjusting the Weights :</h4><br>
+                <p>
+                    Vtrain(b) <- v^(Successor(b))<br> <br> Vtrain(b) -- v^(Successor(b)) =0 Achieve the target <br> <br>
+                        Vtrain(b) -- v^(Successor(b)) > 0 Missed the target(Error) <br> <br>
+                        Vtrain(b) -- v^(Successor(b)) < 0 Missed the target(Error) <br> <br>
+                            Let say you tried 3 set and each set has 10 times / which set is the best fit / who own the
+                            game <br><br>
+                            E= <b>∑</b> (Vtrain(b) __ V^(successor(b)) < 0)2 </p>
+                                <h4>Adjusting the Weights :
+                                </h4> <br>
+                                <p>LMS – Least mean square <br><br><b style=" margin-left: 80px;"> v^(b) = W0 + <b
+                                            style="font-size: 200%;">wi</b>x1 + w2x2 + w3x3 + w4x4 + w5x5 + w6x6
+                                    </b> <br><br>
+                                    Since we did not match the expectation we need to change the weight <b>w1</b> so the
+                                    let the new weight be written as <br><br>
+                                    Wi <- Wi + η ( Vtrain(b) __ V (Successor(b)) < 0) x1 <br><br>
+                                        <b style=" margin-left: 80px;"> V^(b) = W0 + <b
+                                                style="font-size: 200%;">wi</b>x1 + w2x2 + w3x3 + w4x4 + w5x5 + w6x6</b>
+                                </p>
+                                <img src="../images/dls.png" alt="">
+
+    </div>
+</body>
+
+</html>

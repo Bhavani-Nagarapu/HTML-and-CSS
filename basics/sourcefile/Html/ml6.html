@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>machian learning lecture-6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/ml6.css">
+</head>
+
+<body>
+    <div class="welcome">
+        <h1>Welcome <br> to <br> Machine Learning</h1>
+    </div>
+    <div class="version_space ">
+        <h1>Leature-6</h1>
+        <h1>Version space </h1>
+    </div>
+    <div class="iformation_vs">
+        <h2>What is version space algorithm</h2>
+        <p>
+            The version space algorithm is a method for finding the most accurate hypothesis from a set of possible
+            hypotheses in machine learning.
+            The algorithm is used to solve binary classification problems and is based on the concept of the version
+            space, which is a subset of the hypothesis space that contains all hypotheses that are consistent with the
+            training data. <br>
+
+            The version space algorithm starts with the <b style="color: #37AFE1;">most generic hypothesis and the most
+                specific hypothesis and
+                iteratively updates the version space based on the training data</b>. In each iteration, the algorithm
+            eliminates hypotheses from the version space that are inconsistent with the training data and updates the
+            remaining hypotheses to be more consistent with the data. The process continues until the version space
+            contains only one hypothesis, which is considered to be the most accurate hypothesis that explains the data.
+            <br><br>
+            <b>A hypothesis is a concept or idea that you test through research and experiments.</b>
+            <br> <br>
+            The version space algorithm has several important properties that make it useful for finding the most
+            accurate hypothesis: <br>
+            &nbsp &nbsp&nbsp&nbsp&nbsp 1. It is a complete method, meaning that <b> it will find the most accurate
+                hypothesis</b> if one exists. <br>
+            &nbsp &nbsp&nbsp&nbsp&nbsp 2.It is consistent, meaning that it will only consider <b>hypotheses that are
+                consistent with the training
+                data.</b> <br>
+            &nbsp &nbsp&nbsp&nbsp&nbsp 3.It is guaranteed to converge to the most accurate <b>hypothesis in a finite
+                number of iterations</b>. <br> <br>
+            Overall, the version space algorithm is a useful method for finding the most accurate hypothesis in
+            <b>binary
+                classification problems</b> and is often used as a starting point for developing more advanced machine
+            learning
+            algorithms. <br><br>
+            However, it has some <b>limitations</b>, <br>
+        <p style="margin-left: 40px;">
+
+            1. Such as the requirement for a well-defined hypothesis space and the potential for a <b>large number of
+                iterations</b> to converge to the final hypothesis. <br>
+
+            2. the algorithm can be <b>computationally expensive</b> for large datasets or complex hypothesis spaces.
+
+        </p>
+        <h2> What is Version Space</h2>
+        <p>Version space is the set of all hypotheses that are consistent with the observed training data. It represents
+            the range of possible solutions to the learning problem given the available data. The version space can be
+            used to make predictions about new, unseen data by selecting the hypothesis that is most likely to be
+            correct based on the observed training data.
+
+        <div class="row">
+            <div class="col">
+                <p style="margin-left: 40px;"> VS H,D = {h ϵ H | Consistent (h1D)} <br>
+
+                    Where H is the complete hypothesis set <br>
+                    h is the subset of H <br>
+                    D is the training data</p>
+            </div>
+            <div class="col">
+                <img src="../images/versionspace.png" alt="">
+            </div>
+        </div> <br>
+
+        Let say x is the input then when h(x) = c(x) then we call that hypothesis is consistent with training example/
+        training data
+        </p>
+
+
+        </p>
+        <h2>Algorithm to obtain version Space</h2>
+        <p>List and then eliminate : </p>
+        <p> Step1: List all the hypothesis in H and consider that as the Version space <br>
+
+            Step2: Keep on removing inconsistent hypothesis from the version space <br>
+            &nbsp &nbsp &nbsp &nbsp &nbsp (for each and every training examples < X1, C(X)> remove <br>
+                &nbsp &nbsp &nbsp &nbsp &nbsp hypothesis where h(X) ≠ C(X). <br>
+                Step3: Output the list of all the hypothesis into VS after checking with all the training data/
+                Examples.
+        </p>
+        <img src="../images/versionspace1.png" alt="">
+        <p>List and then eliminate : </p> <br>
+        <p>h1(X1) = C (X1) and h1(X2) = C (X2) and h1(X3) = C (X3) <br>
+            h2(X1) ≠ C (X1) and h2(X2) = C (X2) and h2(X3) = C (X3) <br>
+            h3(X1) = C (X1) and h3(X2) ≠ C (X2) and h3(X3) = C (X3) <br>
+            h4(X1) = C (X1) and h4(X2) = C (X2) and h4(X3) ≠ C (X3) <br>
+            h5(X1) = C (X1) and h5(X2) = C (X2) and h5(X3) = C (X3) <br>
+            h6(X1) = C (X1) and h6(X2) ≠ C (X2) and h6(X3) = C (X3) <br>
+        </p>
+        <h1 style="color: #cd6133;text-align: center; padding: 10px 10px 10px 10px;"><b>Linear Regression</b></h1>
+        <br>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col">
+                <p>Linear regression is depends on Linear Model <br>
+                    Y = mX + C <br>
+                <p style="margin-left: 50px;">C is constant / Co-efficient <br>
+                    m is the slope / y-Intercept <br>
+                    Y is the dependent variable <br>
+                    X is independent variable</p>
+
+
+                </p>
+            </div>
+            <div class="col">
+                <img src="../images/linearregresion.png" alt="">
+            </div>
+        </div>
+        <img src="../images/linearregression2.png" alt="" style="width: 70vw;margin-top: 30px;">
+        <img src="../images/linearregrsession3.png" alt="" style="width: 70vw; margin-top: 40px;">
+        <p style="margin-left: 40px; margin-top: 20px;">Similar graph will come in case we go for : Distance Vs Time
+            where speed is constant
+        </p>
+        <img src="../images/linearrregression4.png" alt="" style="width: 70vw; margin-top: 40px;">
+        <img src="../images/linearregression5.png" alt="" style="width: 70vw; margin-top: 40px;">
+        <div class="linear_information">
+            <p>Let's see the mathematical implementation of Linear regression!</p> <br>
+            <p> suppose we have a dataset that looks like:</p>
+            <div class="row">
+                <div class="col">
+                    <table>
+                        <tr>
+                            <th>x</th>
+                            <th>y</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>3</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col" style="text-align: center;">
+                    <p>Now, lets find regression equation to find the best fit line!</p>
+                    <p>y=mx+c</p>
+                    <p> To find this equation for our data , we need to find our slope(m) and <br> coefficient(c)</p>
+                </div>
+            </div>
+            <img src="../images/linearregression6.png" alt="" style="width: 70vw; margin-top: 40px;">
+            <p style="margin-left: 60px; margin-top: 20px;">Mean = sum of all number / number count = (1+2+3+4+5)/5
+                = 3</p>
+            <img src="../images/linearregression6.png" alt="" style="width: 70vw; margin-top: 40px;">
+            <p style="margin-left: 60px; margin-top: 20px;">Mean = sum of all number / number count = (3+2+2+4+3)/5
+                = 2.8</p>
+            <br>
+            <P style="text-align: center;">y=mx+c</P>
+            <img src="../images/linearregression8.png" alt="" style="width: 20vw; margin-left: 50px;">
+            <table>
+                <tr>
+                    <th>x</th>
+                    <th>y</th>
+                    <th>x-xi</th>
+                    <th>y-yi</th>
+                    <th>(x-xi)^2</th>
+                    <th>(x-xi)(y-yi)</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>-2</td>
+                    <td>0.2</td>
+                    <td>4</td>
+                    <td>-0.4</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>-1</td>
+                    <td>-0.8</td>
+                    <td>1</td>
+                    <td>0.8</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>-0.8</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1.2</td>
+                    <td>1</td>
+                    <td>1.2</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>0.2</td>
+                    <td>4</td>
+                    <td>0.4</td>
+                </tr>
+            </table>
+            <img src="../images/linearregression9.png" alt="">
+            <img src="../images/linearregression10.png" alt="">
+            <img src="../images/linearregression11.png" alt="">
+            <p>Now, let's predict the value of y using x={1,2,3,4,5} and plot the points!</p>
+            <p style="margin-left: 190px;">y=(0.2*x)+2.2</p>
+            <table style="width: 520px;">
+                <tr>
+                    <td>yp=(0.2*1)+2.2=2.4</td>
+                </tr>
+                <tr>
+                    <td>yp=(0.2*2)+2.2=2.6</td>
+                </tr>
+                <tr>
+                    <td>yp=(0.2*4)+2.2=2.8</td>
+                </tr>
+                <tr>
+                    <td>yp=(0.2*4)+2.2=3.0</td>
+                </tr>
+                <tr>
+                    <td>yp=(0.2*5)+2.2=3.2</td>
+                </tr>
+
+            </table>
+            <p style="margin-left: 150px;">yp=Predicted values of y</p>
+            <br>
+            <p style="text-align: center; padding-top: 10px;padding-bottom: 30px;">plot the predicted values along with
+                the actual values to see the difference</p>
+            <div class="row">
+                <div class="col" style="margin-left: 180px;">
+                    <table style="width: 30vw;">
+                        <tr>
+                            <th>x</th>
+                            <th>y</th>
+                            <th>yp</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>2.4</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2.6</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>2.8</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>3.2</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col">
+                    <img src="../images/linearregression12.png" alt="">
+                </div>
+                <p>so our goal is to reduce this error!</p>
+            </div>
+
+            <p><b style="text-decoration-line: underline;">Minimizing the Distance:</b> There are lots of ways to
+                minimize the distance between the line and the data points like sum of squared errors , sum of Absolute
+                errors , Root Mean square error etc.</p>
+            <img src="../images/linearregression13.png" alt="" style="margin-left: 290px;"> <br>
+            <p>We keep moving this line through the data points to make sure the best fit line has the least square
+                distance between the data points and the regression line</p>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

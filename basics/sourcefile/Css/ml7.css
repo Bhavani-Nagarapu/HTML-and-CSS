@@ -1,0 +1,79 @@
+.body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+ 
+}
+.welcome
+{
+    background-image: url("https://designindc.com/wp-content/uploads/2022/12/Machine-Learning.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+}
+.welcome h1
+{
+    color: white;
+    font-size: 130px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 180px;
+}
+.candidateElimination_algorithm 
+{
+    margin-left: 190px;
+    margin-right: 180px;
+    font-size: 120%;
+}
+.candidateElimination_algorithm   h1
+{
+ text-align: center;
+ color: #1B9CFC;
+ padding-top: 20px;
+ padding-bottom: 5px;
+
+}
+.infor_candidate
+{
+    margin-top: 40px;
+    margin-left: 290px;
+    margin-right: 290px;
+    font-size: 120%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.infor_candidate h3
+{
+    color: #2e86de;
+}
+table, th, td {
+    border:1px solid black;
+    width: 50vw;
+    text-align: center;
+    margin-left: 50PX;
+    margin-top: 10px;
+    margin-bottom: 10PX;
+   
+  }
+  tr th{
+    background-color: #fffa65;
+  }
+ 
+  td:hover
+  {
+    background-color: #ffb8b8;
+  }
+  th:hover
+  {
+    background-color: #badc58;
+  }

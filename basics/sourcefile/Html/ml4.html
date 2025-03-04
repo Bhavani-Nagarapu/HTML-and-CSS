@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ml lecture-4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/ml4.css">
+</head>
+
+<body>
+    <div class="welcome">
+        <h1>Welcome <br> to <br> Machine Learning</h1>
+    </div>
+    <br>
+    <div class="concept_learning">
+
+        <h1 style="font-size: 290%;">Leature-4</h1>
+        <h1 style="font-size: 350%;">Concept learning</h1>
+    </div>
+    <div class="cl_information">
+        <p>Concept learning involves <b>acquiring general concepts from specific training</b> examples. <br>
+            Inferring a Boolean-valued function from training examples of its input and output. <br>
+            What is binary classification = Goal is to predict one of two possible outcomes, often represented as either
+            0 or 1 <br>
+            What is attributes : The feature to identify the subject/Object ex : Cell phone(Size, Company, Model, Color,
+            etc..) <br></p>
+        <h5>What is Number of Instances : Classification type ^d
+        </h5>
+        <p style="margin-left: 50px;">
+            For Binary classification , Classification type = 2 <br>
+            For above cell phone example, number of feature is 4 <br>
+            So for a Binary classification , number of Instances will be 2^4 = 16 <br>
+        </p> <br>
+        <table style="width:87%">
+            <tr>
+                <th>Gadgets</th>
+                <th>Size(x1)</th>
+                <th> Color(x2)</th>
+                <th>Screen type(x3)</th>
+                <th>Shape(x4)</th>
+            </tr>
+            <tr>
+                <td>Tab</td>
+                <td>Large(0)</td>
+                <td>Black(0)</td>
+                <td>Flat(0)</td>
+                <td>Squre(0)</td>
+            </tr>
+            <tr>
+                <td>Smart phone</td>
+                <td>Small(1)</td>
+                <td>Blue(1)</td>
+                <td>floded(1)</td>
+                <td>Rectangle(1)</td>
+            </tr>
+        </table>
+        <br>
+        <p><b></b> All the 4 features has binary values ( This may not be true always )
+        <p><b>Note</b> All the 4 features has binary values ( This may not be true always )
+        </p><br>
+        <p>General representation of the concepts will be
+            <br>
+            Concept name = (x1,x2,x3,x4)<br> <br>
+
+            Tab = (Large, black, flat, square )=
+
+            SmartPhone = (Small, blue, folded, Rectangle)
+        </p>
+        <br><br>
+        <p>
+            <b> What is Concepts :</b> concept refers to a pattern or relationship in the data that a model is
+            attempting to learn and make predictions based on. A concept can be thought of as a mapping from inputs to
+            outputs that defines the relationship between the features of the data and the target variable.
+            <br><br>
+            For example, in a <b>binary classification</b> problem, a concept might represent the relationship between a
+            set of input features (such as <b> Size, company, model,</b> and color level) and the target variable
+            (<b>whether or not </b>an individual is likely to <b> purchase</b> a certain product). The machine learning
+            model's goal is to learn the underlying concepts in the data and use them to make accurate predictions for
+            new data points. <br>
+            How to get the number of Concepts: Get the number of options in questions
+
+        <p style="margin-left:70px ;">No of Concepts = 2^(2^d) = 2^16 &nbsp &nbsp &nbsp d - is the number of attributes
+        </p>
+
+
+
+        </p>
+        <p><b>The problem of automatically inferring (Concluding) the general definition of some concept is called
+                concept learning
+            </b></p> <br>
+        <p>Inferring or Concluding a Boolean-valued function (Yes/No) from training examples of its input and output.
+        </p>
+        <table style="width:87%">
+            <tr>
+                <th>example</th>
+                <th>Sky</th>
+                <th>AirTemp</th>
+                <th>HUmidity</th>
+                <th>Wind</th>
+                <th>Water</th>
+                <th>Forecast</th>
+                <th>EnjoySport</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>Normal</td>
+                <td>Strong</td>
+                <td>Warm</td>
+                <td>Same</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>High</td>
+                <td>strong</td>
+                <td>Warm</td>
+                <td>Same</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Rainy</td>
+                <td>cold</td>
+                <td>High</td>
+                <td>strong</td>
+                <td>Warm</td>
+                <td>Change</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>High</td>
+                <td>strong</td>
+                <td>cool</td>
+                <td>Change</td>
+                <td>Yes</td>
+            </tr>
+        </table>
+        <br>
+
+        <p style="margin-left: 50px;">The <b>most general hypothesis</b>-that every day is a positive <br>
+            &nbsp&nbsp&nbsp&nbsp example-is represented by (?, ?, ?, ?, ?, ?) -> Accept All <br>
+            and the <b>most specific possible hypothesis</b> -that no day is a positive <br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp example-is represented by (ɸ, ɸ, ɸ, ɸ, ɸ, ɸ) -> Reject All
+        </p>
+        <p>Given: <br>
+            Instances(X): Possible days, each described by the attributes <br>
+        <p style="margin-left: 60px;"> -Sky (with possible values Sunny, Cloudy, and Rainy), <br>
+            -AirTemp (with values Warm and Cold), <br>
+            -Humidity (with values Normal and High), <br>
+            -Wind (with values Strong and Weak), <br>
+            -Water (with values Warm and Cool), and <br>
+            -Forecast (with values Same and Change). <br><br></p>
+
+        Hypotheses(H): Each hypothesis is described by a conjunction of constraints on the attributes Sky, AirTemp,
+        Humidity, Wind, Water, and Forecast. The constraints may be "?" (any value is acceptable), "0 (no value is
+        acceptable), or a specific value.
+        Target concept c: EnjoySport : X -> (0,l)<br><br>
+
+        </p>
+        <table style="width: 80%;">
+            <tr>
+                <td>2</td>
+                <td>Cloudy</td>
+                <td>Warm</td>
+                <td>High</td>
+                <td>Slow</td>
+                <td>Warm</td>
+                <td>Same</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Rainy</td>
+                <td>Cold</td>
+                <td>High</td>
+                <td>Strong</td>
+                <td>Warm</td>
+                <td>Change</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>High</td>
+                <td>Strong</td>
+                <td>Cool</td>
+                <td>Change</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Cloudy</td>
+                <td>NA</td>
+                <td>NA</td>
+                <td>NA</td>
+                <td>NA</td>
+                <td>NA</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>NA</td>
+                <td>NA</td>
+                <td>NA</td>
+                <td>NA</td>
+                <td>NA</td>
+                <td>NA</td>
+                <td>NO</td>
+            </tr>
+        </table>
+        <br>
+        <P style="margin-left: 40px;">No of distinct instances = 3*2*2*2*2*2 =96
+        </P>
+        <p><b style="color: #e15f41;">Syntactically distinct hypotheses :</b> refers to the idea that there can be
+            multiple different hypotheses that have the same meaning, but are expressed using different syntax (i.e.
+            sentence structure). For example, consider the following two sentences: <br>
+            &nbsp&nbsp&nbsp&nbsp The cat is on the mat. <br>
+            &nbsp&nbsp&nbsp&nbsp The mat has a cat on it. <br>
+            <b> Both of these sentences have the same meaning, but they are structured differently </b>(the
+            subject-verb-object order is different). In this sense, they are "syntactically distinct hypotheses.“
+            <br><br>
+
+            It's important to note that in some cases, <b> the syntax of a sentence can affect its meaning.</b>
+            For example: <br>
+            &nbsp&nbsp&nbsp&nbspThe cat chased the mouse.<br>
+            &nbsp&nbsp&nbsp&nbspThe mouse was chased by the cat.<br>
+            In this case, the two sentences have different meanings, as the subject-verb-object order changes the focus
+            of the sentence.<br>
+            In Natural Language Processing (NLP) and other areas of computer science, recognizing and working with
+            syntactically distinct hypotheses can be important in tasks such as language translation, text
+            classification, and question answering.<br>
+        </p>
+        <p> <b style="color: #e15f41">"Semantically distinct hypotheses“ :</b> refers to the idea that there can be
+            multiple different hypotheses that have <b>different meanings</b>, despite having similar or identical
+            syntax. In other words, the <b>meaning of the hypothesis</b> is different, even though the <b>sentence
+                structure is the same</b>. <br>
+            &nbsp&nbsp For example, consider the following two sentences: <br><br>
+
+            &nbsp&nbsp&nbsp&nbspJohn is happy. <br>
+            &nbsp&nbsp&nbsp&nbspJohn is hungry. <br><br>
+
+            Both sentences have the same syntax (subject-verb-predicate order), but the meaning of the sentences is
+            different. In this case, "John is happy" and "John is hungry" are considered "semantically distinct
+            hypotheses.“ <br><br>
+
+            It's important to note that in many NLP tasks, such as text classification, sentiment analysis, and question
+            answering, it's important to understand the meaning of a sentence in order to perform the task effectively.
+            In these cases, being able to identify semantically distinct hypotheses can be important for accurately
+            determining the meaning of a sentence.
+        </p>
+        <p>The most <b>general hypothesis</b> -that every day is a positive <br>
+            &nbsp&nbsp&nbsp&nbspexample-is represented by (?, ?, ?, ?, ?, ?) <br>
+            and the most <b>specific possible hypothesis</b> -that no day is a positive <br>
+            &nbsp&nbsp&nbsp&nbsp example-is represented by (ɸ, ɸ, ɸ, ɸ, ɸ, ɸ) <br>
+        </p>
+        <p> &nbsp&nbsp&nbsp&nbsp - indicate by a "?' that any value is acceptable for this attribute, <br>
+            &nbsp&nbsp&nbsp&nbsp - specify a single required value (e.g., Warm) for the attribute, or <br>
+            &nbsp&nbsp&nbsp&nbsp - indicate by a “ɸ” that no value is acceptable. <br>
+        <p style="color: #e66767;"><b>Syntactically distinct hypotheses = 5*4*4*4*4*4 = 5120</b></p>
+        <b>(This calculation includes ? As well as “ɸ” for every attributes)</b> <br>
+        </p>
+        <table style="width:87%">
+            <tr>
+                <th>example</th>
+                <th>Sky</th>
+                <th>AirTemp</th>
+                <th>HUmidity</th>
+                <th>Wind</th>
+                <th>Water</th>
+                <th>Forecast</th>
+                <th>EnjoySport</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>Normal</td>
+                <td>Strong</td>
+                <td>Warm</td>
+                <td>Same</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>High</td>
+                <td>strong</td>
+                <td>Warm</td>
+                <td>Same</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Rainy</td>
+                <td>cold</td>
+                <td>High</td>
+                <td>strong</td>
+                <td>Warm</td>
+                <td>Change</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>High</td>
+                <td>strong</td>
+                <td>cool</td>
+                <td>Change</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>ɸ</td>
+                <td>ɸ</td>
+                <td>ɸ</td>
+                <td>ɸ</td>
+                <td>ɸ</td>
+                <td>ɸ</td>
+                <td>NO</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>Yes</td>
+            </tr>
+        </table>
+        <br>
+        <p> <b style="color: #e66767;"> Semantically distinct hypotheses = 1 + (4.3.3.3.3.3) = 973</b> <br><br>
+            &nbsp&nbsp&nbsp This calculation includes ? for every attributes but “θ” been considers once and been
+            represented by 1, Where the "1" represents the trivial hypothesis that always predicts "no".
+        </p> <br>
+        <table style="width:87%">
+            <tr>
+                <th>example</th>
+                <th>Sky</th>
+                <th>AirTemp</th>
+                <th>HUmidity</th>
+                <th>Wind</th>
+                <th>Water</th>
+                <th>Forecast</th>
+                <th>EnjoySport</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>Normal</td>
+                <td>Strong</td>
+                <td>Warm</td>
+                <td>Same</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>High</td>
+                <td>strong</td>
+                <td>Warm</td>
+                <td>Same</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Rainy</td>
+                <td>cold</td>
+                <td>High</td>
+                <td>strong</td>
+                <td>Warm</td>
+                <td>Change</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Sunny</td>
+                <td>Warm</td>
+                <td>High</td>
+                <td>strong</td>
+                <td>cool</td>
+                <td>Change</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>Yes</td>
+            </tr>
+        </table>
+        <br>
+        <p>No of distinct instances = 1+ 4*3*3*3*3*3 =973 <br><br>
+
+            Note : Where the "1" represents the trivial hypothesis that always predicts "no".<br><br>
+
+            The trivial hypothesis is a term used in machine learning to refer to the simplest and most basic hypothesis
+            that can be used to solve a given problem. It is called trivial because it provides the minimum amount of
+            information and makes the fewest assumptions about the relationship between the input and output variables.
+            <br><br>
+
+            If we view learning as a search problem, then it is natural that our study of learning algorithms will
+            examine the different strategies for searching the hypothesis space. We will be particularly interested in
+            algorithms capable of efficiently searching very large or infinite hypothesis spaces, to find the hypotheses
+            that best fit the training data.
+
+        </p>
+    </div>
+
+</body>
+
+</html>

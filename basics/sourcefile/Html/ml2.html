@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning leature-2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../Css/ml2.css">
+</head>
+
+<body>
+    <div class="welcome">
+        <h1>Welcome <br> to <br> Machine Learning</h1>
+    </div>
+    <div class="intro">
+        <div class="Topics">
+            <h1>What we Cover.</h1>
+            <h5 style="color: #fa8231;">Leature-2</h5>
+
+            <ul class="list-group">
+                <li class="list-group-item">Well posed learning problem.</li>
+                <li class="list-group-item">Task/Performance/Training.</li>
+                <li class="list-group-item">Different examples for T/P/E(Well posed learning problem).</li>
+                <li class="list-group-item">Perspective of Ml/issues.</li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="wellposed">
+        <h1 style="color: #474787;">Well posed learning problems</h1>
+        <p>Well-posed (not comparable) (mathematics)<b>Having a unique solution whose value changes only slightly if
+                initial conditions change slightly.</b>
+        </p>
+        <p> <b style="color: #fa8231;">Definition:</b> A computer program is said to learn from experience E with
+            respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by
+            P, improves with experience E.
+        </p>
+        <div class="row">
+            <div class="col-3" id="col1">
+                <h4>Task</h4>
+                <p>erformance <b>Measure</b><br>Training <b>Experience</b>
+                </p>
+
+            </div>
+            <div class="col-4" id="col2">
+                <img src="../images/well posed1.png" alt="" style="margin-top: 0px;">
+            </div>
+            <div class="col-3" id="col3">
+                <p>Real world example :
+                    <br>
+                    Throwing stone in river<br>
+                    Game(Chess / Cricket etc.)<br>
+                    Commute :<br>
+                    Shopping :<br>
+                    Eating out :<br>
+                </p>
+            </div>
+        </div>
+        <img src="../images/well posed2.png" alt="" id="img_wellposed2">
+    </div>
+    <div class="table_information">
+        <table class="table">
+            <tr id="table_heading">
+                <th>Example</th>
+                <th>Task(T)-(wish/What)</th>
+                <th>Performance(P)</th>
+                <th>Experience</th>
+            </tr>
+            <tr id="table_data">
+                <td>Playing Checker</td>
+                <td>playing againest opponent to win</td>
+                <td>Make perfect move to win</td>
+                <td>It play itself to improve</td>
+
+            </tr>
+            <tr id="table_data">
+                <td>Handwriting recognition learning</td>
+                <td>Classifying the images and text</td>
+                <td>Better Clarification</td>
+                <td>A database of homeWork text</td>
+            </tr>
+            <tr id="table_data">
+                <td>Robot driving learning</td>
+                <td>Drive the car in a lane highway</td>
+                <td>Distance travel safely</td>
+                <td>Image, Vehicles on road </td>
+            </tr>
+        </table>
+        <div class="data_explan">
+            <h4>A robot driving learning problem: </h4>
+            <p>Task T: driving on public four-lane highways using vision sensors<br>
+                Performance measure P: average distance traveled before an error (as judged by human overseer) <br>
+                Training experience E: a sequence of images and steering commands recorded while observing a human
+                driver
+            </p>
+            <h4>A checkers learning problem: </h4>
+            <p>Task T: Playing checkers <br>
+                Performance measure P: percent of games won against opponents <br> Training experience E: playing
+                practice games against itself
+            </p>
+            <h4>A handwriting recognition learning problem:</h4>
+            <p>Task T: recognizing and classifying handwritten words within images<br>
+                Performance measure P: percent of words correctly classified<br> Training experience E: a database of
+                handwritten words with given classifications
+            </p>
+        </div>
+    </div>
+    <div class="perceptron">
+        <h1>What is perceptron</h1>
+        <p style="margin-left: 30px; margin-right: 40px;">A perceptron is a type of artificial neuron used as a building
+            block in neural networks. It is one of the simplest forms of a neural network model, introduced by Frank
+            Rosenblatt in 1958. The perceptron is a binary classifier, which means it can distinguish between two
+            classes.
+        </p>
+        <h3 style="color: #227093;"><b>Key Components of a Perceptron:</b></h3><br>
+        <p style="margin-left: 30px; margin-right: 40px;"><b style="color: #218c74; font-size: 130%;">Inputs:</b> The
+            perceptron receives multiple input values, typically represented as a vector x=[x1,x2,…,xn]\mathbf{x} =
+            [x_1, x_2, \ldots, x_n]x=[x1​,x2​,…,xn​].<br><br>
+
+            <b style="color: #218c74; font-size: 130%;">Weights:</b> Each input is associated with a weight
+            w=[w1,w2,…,wn]\mathbf{w} = [w_1, w_2, \ldots, w_n]w=[w1​,w2​,…,wn​], which indicates the importance of the
+            input. The weights are adjustable parameters.<br><br>
+
+            <b style="color: #218c74; font-size: 130%;">Bias:</b> A bias term b is added to the weighted sum of the
+            inputs, allowing the model to shift the decision boundary. It can be considered as an additional input with
+            a fixed value of 1.<br><br>
+
+            <b style="color: #218c74; font-size: 130%;">Activation Function:</b> The perceptron uses an activation
+            function to decide the output. The most common activation function for a perceptron is the step function,
+            which outputs a binary result (0 or 1).
+        </p>
+        <h4 style="color: #227093;"><b>How It Works</b></h4>
+        <p>1. <b>Weighted Sum:</b> The perceptron computes a weighted sum of the inputs:<br><br><b
+                style="margin-left: 380px;">z=w.x+b=w1x1+w2x2+...+wnxn+b</b><br><br>
+            2. <b>Activation:</b> The output is determined by applying the activation function to the weight sum. In the
+            case of a step function:
+        </p>
+        <img src="../images/percpton.png" alt="">
+        <h4 style="color: #227093;"><b>Learning Process: </b></h4>
+        <p><b>Training:</b> The perceptron learns by adjusting its weights based on the error between the predicted
+            output and the actual output. The weights are updated using the perceptron learning rule, which adjusts the
+            weights in proportion to the error.<br>
+
+            <b>Convergence:</b> If the data is linearly separable, the perceptron learning algorithm is guaranteed to
+            converge, meaning it will find a set of weights that correctly classifies the training data.
+        </p>
+        <h4 style="color: #227093;"><b> Limitations:</b></h4>
+        <p>
+            <b>Linear Separability: </b>A single-layer perceptron can only solve problems where the data is linearly
+            separable. It cannot solve problems like XOR, where the classes cannot be separated by a straight line.<br>
+
+            <b>Complexity:</b> For more complex problems, perceptrons can be combined into multi-layer networks, known
+            as Multi-Layer Perceptrons (MLPs), which are capable of solving non-linear problems.
+        </p>
+        <h4 style="color: #227093;"><b>Applications:</b></h4>
+        <p><b>Basic Classification: </b>Early applications included simple binary classification tasks, like distinguishing between different patterns.<br>
+
+            <b>Foundational to Neural Networks:</b> The perceptron is a foundational concept in the development of modern neural networks and deep learning models.
+            </p>
+
+    </div>
+
+
+</body>
+
+</html>

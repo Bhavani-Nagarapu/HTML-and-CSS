@@ -1,0 +1,79 @@
+.body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+ 
+}
+.welcome
+{
+    background-image: url("https://cioafrica.co/wp-content/uploads/2020/01/Human-Intelligence-Can-Fix-AI-Shortcomings-1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+}
+.welcome h1
+{
+    color: white;
+    font-size: 130px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 180px;
+}
+.version_space 
+{
+    margin-left: 190px;
+    margin-right: 180px;
+    font-size: 120%;
+}
+.version_space  h1
+{
+ text-align: center;
+ color: #cc8e35;
+ padding-top: 20px;
+ padding-bottom: 5px;
+
+}
+.iformation_vs
+{
+    margin-top: 40px;
+    margin-left: 250px;
+    margin-right: 250px;
+    font-size: 120%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.iformation_vs h2
+{
+    color: #b33939;
+}
+table, th, td {
+    border:1px solid black;
+    width: 50vw;
+    text-align: center;
+   
+  }
+  tr th{
+    background-color: #fffa65;
+  }
+  table:hover
+  {
+    background-color: #ffb8b8;
+  }
+  td:hover
+  {
+    background-color: #cd84f1;
+  }
+  th:hover
+  {
+    background-color: #badc58;
+  }
